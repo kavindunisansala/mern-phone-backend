@@ -32,7 +32,7 @@ type CheckoutSessionRequest = {
     addressLine1: string;
     city: string;
   };
-  phoneshoptId: string;
+  phoneshopId: string;
 };
 
 const stripeWebhookHandler = async (req: Request, res: Response) => {
@@ -71,7 +71,7 @@ const createCheckoutSession = async (req: Request, res: Response) => {
     const checkoutSessionRequest: CheckoutSessionRequest = req.body;
 
     const phoneshop = await Phoneshop.findById(
-      checkoutSessionRequest.phoneshoptId
+      checkoutSessionRequest.phoneshopId
     );
 
     if (!phoneshop) {

@@ -3,14 +3,14 @@ import Phoneshop from "../models/phoneshop";
 
 const getPhoneshop = async (req: Request, res: Response) => {
   try {
-    const restaurantId = req.params.restaurantId;
+    const phoneshopId = req.params.phoneshopId;
 
-    const restaurant = await Phoneshop.findById(restaurantId);
-    if (!restaurant) {
-      return res.status(404).json({ message: "restaurant not found" });
+    const phoneshop = await Phoneshop.findById(phoneshopId);
+    if (!phoneshop) {
+      return res.status(404).json({ message: "phonshop not found" });
     }
 
-    res.json(restaurant);
+    res.json(phoneshop);
   } catch (error) {
     console.log(error);
     res.status(500).json({ message: "something went wrong" });
@@ -52,7 +52,7 @@ const searchPhoneshop = async (req: Request, res: Response) => {
     if (searchQuery) {
       const searchRegex = new RegExp(searchQuery, "i");
       query["$or"] = [
-        { restaurantName: searchRegex },
+        { phoneshopName: searchRegex },
         { cuisines: { $in: [searchRegex] } },
       ];
     }

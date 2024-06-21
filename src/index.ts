@@ -3,7 +3,7 @@ import cors from "cors";
 import "dotenv/config"; 
 import mongoose from "mongoose";
 import myUserRoute from './routes/MyUserRoutes'
-import myPhoneRoutes from './routes/MyPhoneRoutes'
+import myPhoneRoutes from './routes/MyPhoneshopRoutes'
 import phoneshopRoute from './routes/PhoneshopRoute'
 import { v2 as cloudinary } from "cloudinary";
 import orderRoute from "./routes/OrderRoute"

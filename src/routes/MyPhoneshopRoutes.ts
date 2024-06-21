@@ -1,10 +1,10 @@
 import express from "express";
 import multer from "multer";
-import router from "./MyUserRoutes";
 import MyPhoneshopController from "../controllers/MyPhoneshopController";
 import { jwtCheck, jwtParse } from "../middleware/auth";
 import { validateMyPhoneshopRequest } from "../middleware/validation";
 
+const router = express.Router();
 
 const storage = multer.memoryStorage();
 const upload = multer({
